@@ -1,0 +1,2 @@
+GurrenBox,GigaDrill,AvancePerpetuo,HerculesX-13,IronTorax,CascoMinero, H,CapitanHalcon, SK33
+SworDan,GarraInfinita,PiesGusano,Brazos de araña,Pectorales de Saltamones,CabezaHydra, A, SS+

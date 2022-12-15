@@ -1,0 +1,2 @@
+GigaDrill,2500,200
+GarraInfinita,2700,100

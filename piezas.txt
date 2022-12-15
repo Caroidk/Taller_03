@@ -1,0 +1,8 @@
+AvancePerpetuo,PC,P,200
+HerculesX-13,PP,B,1500
+IronTorax,PE,T,1000
+CascoMinero,PP,C,200,500
+PiesGusano,PC,P,150
+Brazos de araña,PP,B,1500
+Pectorales de Saltamones,PE,T,1050
+CabezaHydra,PP,C,200,300
