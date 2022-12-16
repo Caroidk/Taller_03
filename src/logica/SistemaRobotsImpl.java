@@ -6,11 +6,19 @@ import java.io.*;
 
 public class SistemaRobotsImpl implements SistemaRobots{
 
-	ArrayList<Robot> robots = new ArrayList<Robot>();
-	ArrayList<Combate> combates = new ArrayList<Combate>();
-	ArrayList<Pieza> piezas = new ArrayList<Pieza>();
-	ArrayList<Arma> armas = new ArrayList<Arma>();
-	ArrayList<String> rarezas = new ArrayList<String>();
+	ArrayList<Robot> robots;
+	ArrayList<Combate> combates;
+	ArrayList<Pieza> piezas;
+	ArrayList<Arma> armas;
+	ArrayList<String> rarezas;
+	
+	public SistemaRobotsImpl() {
+		 robots = new ArrayList<Robot>();
+		 combates = new ArrayList<Combate>();
+		 piezas = new ArrayList<Pieza>();
+		 armas = new ArrayList<Arma>();
+		 rarezas = new ArrayList<String>();
+	}
 	
 	public void leerArmas(){
 		try {
