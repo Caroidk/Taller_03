@@ -1,2 +1,7 @@
-GurrenBox,GigaDrill,AvancePerpetuo,HerculesX-13,IronTorax,CascoMinero, H,CapitanHalcon, SK33
-SworDan,GarraInfinita,PiesGusano,Brazos de araña,Pectorales de Saltamones,CabezaHydra, A, SS+
+GurrenBox,GigaDrill,AvancePerpetuo,HerculesX-13,IronTorax,CascoMinero,H,CapitanHalcon,SK33
+RobotoCop,GigaDrill,AvancePerpetuo,HerculesX-13,IronTorax,CascoMinero,H,CapitanLechuga,SK22
+YubiYubi,GigaDrill,AvancePerpetuo,HerculesX-13,IronTorax,CascoMinero,H,CapitanLechuga,SK22
+SworDan,GarraInfinita,PiesGusano,Brazos de araña,Pectorales de Saltamones,CabezaHydra,A,SS+
+Metoroido,GarraInfinita,PiesGusano,Brazos de araña,Pectorales de Saltamones,CabezaHydra,A,A
+Starlight,GarraInfinita,PiesGusano,Brazos de araña,Pectorales de Saltamones,CabezaHydra,A,B
+Gonzatron,GarraInfinita,PiesGusano,Brazos de araña,Pectorales de Saltamones,CabezaHydra,A,S+

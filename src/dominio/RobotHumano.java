@@ -35,6 +35,8 @@ public class RobotHumano extends Robot{
 
 	@Override
 	public String toString() {
-		return "RobotHumano [nombre="+getNombre()+"piloto=" + piloto + ", equipo=" + equipo + "]";
+		return "RobotHumano [piloto=" + piloto + ", equipo=" + equipo + ", getNombre()=" + getNombre()
+				+ ", getPiezas()=" + getPiezas() + ", getArma()=" + getArma() + "]";
 	}
+	
 }

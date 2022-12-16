@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextPane;
@@ -38,6 +39,11 @@ public class Menu extends JFrame {
 		panel.add(txtpnMenDeOpciones);
 		
 		JButton simular = new JButton("Iniciar simulaci\u00F3n");
+		simular.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(panel, "En desarrollo...");
+			}
+		});
 		simular.setBounds(21, 53, 233, 21);
 		panel.add(simular);
 		
@@ -55,18 +61,25 @@ public class Menu extends JFrame {
 		JButton ensamblar = new JButton("Ensamblar robot");
 		ensamblar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(panel, "En desarrollo...");
 			}
 		});
 		ensamblar.setBounds(21, 155, 233, 21);
 		panel.add(ensamblar);
 		
 		JButton cambiarPiezas = new JButton("Cambiar piezas de robot");
+		cambiarPiezas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(panel, "En desarrollo...");
+			}
+		});
 		cambiarPiezas.setBounds(21, 204, 233, 21);
 		panel.add(cambiarPiezas);
 		
 		JButton cambairArmas = new JButton("Cambiar las armas");
 		cambairArmas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(panel, "En desarrollo...");
 			}
 		});
 		cambairArmas.setBounds(286, 53, 223, 21);
@@ -86,16 +99,33 @@ public class Menu extends JFrame {
 		JButton robotsPiloto = new JButton("Robots manejados por un piloto");
 		robotsPiloto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				RobotsPiloto piloto = new RobotsPiloto();
+				piloto.setVisible(true);
+				dispose();
 			}
 		});
 		robotsPiloto.setBounds(286, 155, 223, 21);
 		panel.add(robotsPiloto);
 		
 		JButton robotsEquipo = new JButton("Robots en equipo ingresado");
+		robotsEquipo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RobotsEquipo eq = new RobotsEquipo();
+				eq.setVisible(true);
+				dispose();
+			}
+		});
 		robotsEquipo.setBounds(286, 204, 223, 21);
 		panel.add(robotsEquipo);
 		
 		JButton estVictorias = new JButton("Estad\u00EDsticas de victorias de la humanidad");
+		estVictorias.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				StatsVictorias vic = new StatsVictorias();
+				vic.setVisible(true);
+				dispose();
+			}
+		});
 		estVictorias.setBounds(21, 255, 276, 21);
 		panel.add(estVictorias);
 		

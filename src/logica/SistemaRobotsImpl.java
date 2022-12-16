@@ -6,11 +6,11 @@ import java.io.*;
 
 public class SistemaRobotsImpl implements SistemaRobots{
 
-	ArrayList<Robot> robots;
-	ArrayList<Combate> combates;
-	ArrayList<Pieza> piezas;
-	ArrayList<Arma> armas;
-	ArrayList<String> rarezas;
+	private ArrayList<Robot> robots;
+	private ArrayList<Combate> combates;
+	private ArrayList<Pieza> piezas;
+	private ArrayList<Arma> armas;
+	private ArrayList<String> rarezas;
 	
 	public SistemaRobotsImpl() {
 		 robots = new ArrayList<Robot>();
@@ -200,5 +200,72 @@ public class SistemaRobotsImpl implements SistemaRobots{
 			RobotAlien robota = (RobotAlien) robot;
 			combate.anadirAlien(robota);;
 		}
+	}
+	
+	public ArrayList<Robot> robotsPiloto(String nombre){
+		ArrayList<Robot> roboth = new ArrayList<Robot>();
+		for(Robot robot : robots) {
+			if(robot instanceof RobotHumano) {
+				RobotHumano r = (RobotHumano) robot;
+				if(r.getPiloto().equals(nombre)) {
+					roboth.add(r);
+				}
+			}
+		}
+		return roboth;
+	}
+	
+	public ArrayList<Robot> robotsEquipo(String nombre){
+		ArrayList<Robot> roboth = new ArrayList<Robot>();
+		for(Robot robot : robots) {
+			if(robot instanceof RobotHumano) {
+				RobotHumano r = (RobotHumano) robot;
+				if(r.getEquipo().equals(nombre)) {
+					roboth.add(r);
+				}
+			}
+		}
+		return roboth;
+	}
+	
+	public int[] statsRobot(Robot robot){
+		int[] stats = new int[3];
+		int velocidad = 0;
+		int vida = 0; 
+		int ataque = 0;
+		for(Pieza pieza : robot.getPiezas()) {
+			vida = pieza.getVidaTotal();
+    		if(pieza instanceof Piernas) {
+    			Piernas piernas = (Piernas) pieza;
+    			velocidad += piernas.getVelocidad();
+    		}
+    		if(pieza instanceof Brazos) {
+    			Brazos brazos = (Brazos) pieza;
+    			ataque += brazos.getAtaque();
+    		}
+    		if(pieza instanceof Torax) {
+    			Torax torax = (Torax) pieza;
+    			vida += torax.getVida();
+    		}
+    		if(pieza instanceof Cabeza) {
+    			Cabeza cabeza = (Cabeza) pieza;
+    			vida += cabeza.getVida();
+    			velocidad += cabeza.getVelocidad();
+    		}
+		}
+		stats[0] = vida;
+		stats[1] = ataque;
+		stats[2] = velocidad;
+		return stats;
+	}
+	
+	public int getVictorias() {
+		int total = 0;
+		for(Combate combate : combates) {
+			if(combate.getGanador().equals("H")) {
+				total++;
+			}
+		}
+		return total;
 	}
 }

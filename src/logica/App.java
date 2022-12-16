@@ -1,5 +1,6 @@
 package logica;
 
+import dominio.*;
 import gui.*;
 public class App {
 
@@ -9,6 +10,7 @@ public class App {
 		SistemaRobotsImpl sistema = new SistemaRobotsImpl();
 		sistema.leerArmas();
 		sistema.leerPiezas();
+		sistema.leerRobots();
 		Menu menu= new Menu();
 		menu.setVisible(true);
 	}

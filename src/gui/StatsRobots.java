@@ -22,6 +22,7 @@ import javax.swing.JPopupMenu;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.awt.ScrollPane;
 
 public class StatsRobots extends JFrame {
@@ -36,7 +37,11 @@ public class StatsRobots extends JFrame {
 	 * Create the frame.
 	 */
 	public StatsRobots() {
+		
 		sistema = new SistemaRobotsImpl();
+		sistema.leerPiezas();
+		sistema.leerRobots();
+		
 		setTitle("Estad\u00EDsticas de robots");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 247);
@@ -93,43 +98,17 @@ public class StatsRobots extends JFrame {
 		tabla.setColumnIdentifiers(cabecera);
 		table.setModel(tabla);
 	}
+	
 	public void setDatos() {
-        Object[] datos = new Object[4];
-        for(Robot robot : sistema.getRobots()) {
-        	int vida = 0;
-        	int ataque = 0;
-        	int velocidad = 0;
-        	datos[0] = robot.getNombre();
-        	for(Pieza pieza : robot.getPiezas()) {
-        		vida = pieza.getVidaTotal();
-        		if(pieza instanceof Piernas) {
-        			Piernas piernas = (Piernas) pieza;
-        			velocidad += piernas.getVelocidad();
-        		}
-        		if(pieza instanceof Brazos) {
-        			Brazos brazos = (Brazos) pieza;
-        			ataque += brazos.getAtaque();
-        		}
-        		if(pieza instanceof Torax) {
-        			Torax torax = (Torax) pieza;
-        			vida += torax.getVida();
-        		}
-        		if(pieza instanceof Cabeza) {
-        			Cabeza cabeza = (Cabeza) pieza;
-        			vida += cabeza.getVida();
-        			velocidad += cabeza.getVelocidad();
-        		}
-        	}
-        	datos[1] = vida;
-        	datos[2] = ataque;
-        	datos[3] = velocidad;
-        	tabla.addRow(datos);
+		ArrayList<Robot> robots = sistema.getRobots();
+		
+		Object[] datos = new Object[4];
+        for(int i=0; i<robots.size(); i++) {
+        	int[] stats = sistema.statsRobot(robots.get(i));
+        	
+        	Object[] fila = {robots.get(i).getNombre(),stats[0],stats[1],stats[2]};
+        	tabla.addRow(fila);
         }
-		/*
-		 * datos[0] = "Hola"; datos[1] = "100"; datos[2] = "200"; datos[3] = "156";
-		 * tabla.addRow(datos);
-		 */
-        
 	}
 	
 }

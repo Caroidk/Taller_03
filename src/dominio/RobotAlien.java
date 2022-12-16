@@ -19,7 +19,10 @@ public class RobotAlien extends Robot{
 
 	@Override
 	public String toString() {
-		return "RobotAlien [nombre="+getNombre()+"clase=" + clase + "]";
+		return "RobotAlien [clase=" + clase + ", getNombre()=" + getNombre() + ", getPiezas()=" + getPiezas()
+				+ ", getArma()=" + getArma() + "]";
 	}
+
+	
 	
 }
